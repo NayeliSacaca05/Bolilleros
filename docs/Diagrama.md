@@ -3,17 +3,24 @@
 classDiagram
 
 class Bolillero{
-    +NroBolilla: int
-    +Bolillas: List~int~
-    +BollilaJugada: List~int~ 
-    +BolillaAcertada: List~int~
+    +Cantidad: List~int~
+    +BolillasSacadas: List~int~
+    +Jugada: List~int~ 
+    +BolillaAdentro: List~int~
+    +
+    +SacarBolilla()
 }
-
-
 
 class IAzar{
     <<interface>>
-    +numeros: int
+    +SacarBolilla: List~int~
 }
+
+class AzarRadom{
+    +SacarBolilla: List~int~
+}
+
+AzarRandom ..|> IAzar 
+Bolillero --> IAzar 
 
 ```
